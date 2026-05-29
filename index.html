@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Mahmoud · 24</title>
+<meta name="description" content="A synthwave birthday celebration for Mahmoud — turning 24.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="fx-stars" id="stars"></div>
+<canvas id="confetti-canvas"></canvas>
+<div class="fx-scan"></div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="hero">
+  <div class="sun"></div>
+  <div class="grid-floor"></div>
+  <div class="grid-glow"></div>
+
+  <nav class="nav">
+    <span class="nav-logo">// M · 24</span>
+    <div class="nav-links">
+      <a href="#cake">🎂 Cake</a>
+      <a href="#memory">🧩 Match</a>
+      <a href="#typer">⌨️ Typer</a>
+      <a href="#surprise">🎁 Surprise</a>
+      <a href="#message">💌 Message</a>
+    </div>
+  </nav>
+
+  <div class="hero-inner">
+    <div class="kicker">// system online · 05 · 29 · 2026</div>
+    <h1>
+      <span class="name glitch" data-text="HAPPY">HAPPY</span>
+      <span class="name glitch" data-text="BIRTHDAY">BIRTHDAY</span>
+      <span class="name name--gold glitch-gold" data-text="MAHMOUD">MAHMOUD</span>
+    </h1>
+    <div class="age-badge">◈ LEVEL 24 UNLOCKED ◈</div>
+
+    <div class="term">
+      <div class="term-bar">
+        <i class="tb-red"></i><i class="tb-yellow"></i><i class="tb-green"></i>
+        <span>mahmoud@birthday:~$ zsh</span>
+      </div>
+      <div class="term-body" id="termBody"></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>scroll to celebrate</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</header>
+
+<!-- ===================== CAKE ===================== -->
+<section class="band cake-band" id="cake">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">function blowOutCandles(age: 24)</div>
+      <h2>Make a Wish</h2>
+      <p class="lead">24 neon candles — one for each level unlocked. Tap each one, or use your mic to actually blow! 💨</p>
+    </div>
+
+    <div class="cake-stage reveal">
+      <div class="cake-scene">
+        <div class="candles" id="candles"></div>
+        <div class="cake-body">
+          <div class="tier t1">
+            <div class="drip drip-a"></div>
+            <div class="drip drip-b"></div>
+            <div class="drip drip-c"></div>
+            <span class="tier-label">Mahmoud</span>
+          </div>
+          <div class="tier t2">
+            <div class="drip drip-d"></div>
+            <div class="drip drip-e"></div>
+          </div>
+          <div class="tier t3">
+            <span class="tier-label tier-label--gold">24</span>
+          </div>
+          <div class="plate"></div>
+        </div>
+      </div>
+
+      <div class="mic-wrap" id="micWrap" hidden>
+        <span>🎙 mic level</span>
+        <div class="mic-bar"><i id="micMeter"></i></div>
+      </div>
+      <div class="cake-status" id="cakeStatus">Tap a candle, or use the buttons below 👇</div>
+
+      <div class="cake-controls">
+        <button class="btn btn-cyan" id="micBtn">🎤 Blow with Mic</button>
+        <button class="btn btn-pink" id="blowAll">💨 Blow All</button>
+        <button class="btn btn-ghost" id="relight">🔥 Relight</button>
+      </div>
+
+      <div class="cake-reveal hidden" id="cakeReveal">
+        <p>🌟 Wish granted. Here's to 24 legendary years, Mahmoud! 🌟</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MEMORY GAME ===================== -->
+<section class="band memory-band" id="memory">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">import &#123; MemoryGame &#125; from '@birthday/games'</div>
+      <h2>Tech Memory Match</h2>
+      <p class="lead">Match the tech icons — 8 pairs, 16 cards. How fast can a Computer Engineer solve it? 🧠</p>
+    </div>
+
+    <div class="memory-ui reveal">
+      <div class="memory-stats">
+        <div class="mstat"><div class="mstat-val" id="moveCount">0</div><div class="mstat-lbl">Moves</div></div>
+        <div class="mstat"><div class="mstat-val" id="pairsFound">0/8</div><div class="mstat-lbl">Pairs</div></div>
+        <div class="mstat"><div class="mstat-val" id="memTimer">00:00</div><div class="mstat-lbl">Time</div></div>
+      </div>
+
+      <div class="memory-grid" id="memoryGrid"></div>
+
+      <div class="memory-controls">
+        <button class="btn btn-cyan" id="memStart">▶ Start Game</button>
+        <button class="btn btn-ghost" id="memRestart" disabled>↺ Restart</button>
+      </div>
+
+      <div class="memory-win hidden" id="memWin">
+        <div class="win-title">🏆 LEGENDARY!</div>
+        <p>Solved in <b id="winMoves">0</b> moves &amp; <b id="winTime">00:00</b></p>
+        <p class="win-sub">Not bad for a Level 24 engineer 😎</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CODE TYPER ===================== -->
+<section class="band typer-band" id="typer">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">// Speed Test: Birthday Edition</div>
+      <h2>Code Typer Challenge</h2>
+      <p class="lead">Type the birthday script as fast as you can. WPM is a flex, Mahmoud. ⌨️</p>
+    </div>
+
+    <div class="typer-ui reveal">
+      <div class="typer-stats">
+        <div class="tstat"><div class="tstat-val" id="wpmDisplay">—</div><div class="tstat-lbl">WPM</div></div>
+        <div class="tstat"><div class="tstat-val" id="accDisplay">—</div><div class="tstat-lbl">Accuracy</div></div>
+        <div class="tstat"><div class="tstat-val" id="typerTimerEl">00:00</div><div class="tstat-lbl">Time</div></div>
+      </div>
+
+      <div class="code-display" id="codeDisplay"></div>
+      <textarea
+        class="code-input"
+        id="codeInput"
+        placeholder="Click ▶ Start, then type here..."
+        rows="5"
+        spellcheck="false"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        disabled
+      ></textarea>
+
+      <div class="typer-controls">
+        <button class="btn btn-cyan" id="typerStart">▶ Start Typing</button>
+        <button class="btn btn-ghost" id="typerReset">↺ Reset</button>
+      </div>
+
+      <div class="typer-complete hidden" id="typerComplete">
+        <div class="tc-title">🚀 Code Compiled!</div>
+        <div class="tc-row">
+          <span><b id="finalWPM">0</b> WPM</span>
+          <span><b id="finalAcc">0</b>% accuracy</span>
+          <span>in <b id="finalTime">00:00</b></span>
+        </div>
+        <div class="tc-msg" id="tcMsg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SURPRISE ===================== -->
+<section class="band surprise-band" id="surprise">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">$ ./run_surprise.sh --target=mahmoud</div>
+      <h2>Surprise Generator</h2>
+      <p class="lead">Every press fires confetti and drops a random blessing from the dev gods. Keep mashing! 🎉</p>
+      <button class="big-btn" id="surpriseBtn">
+        <span class="big-btn-icon">🎁</span>
+        <span>Surprise Me!</span>
+      </button>
+      <div class="pop-count">surprises unlocked: <b id="popCount">0</b></div>
+    </div>
+    <div class="fortune" id="fortune"></div>
+  </div>
+</section>
+
+<!-- ===================== MESSAGE ===================== -->
+<section class="band msg-band" id="message">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">cat from_faris.md | pretty-print</div>
+      <h2>A Note For You</h2>
+    </div>
+    <div class="letter reveal">
+      <div class="letter-header">
+        <div class="code-note">// To: Mahmoud &nbsp;|&nbsp; Re: Turning 24 &nbsp;|&nbsp; Priority: ❤️ HIGH</div>
+      </div>
+      <div class="letter-body">
+        <p>Happy Birthday, <span class="hl">Mahmoud!</span> 🎉</p>
+        <p>24 years of existence and you're already a Computer Engineer — that's either dedication or destiny. Either way, we're proud of you.</p>
+        <p>May this year be full of bug-free code, zero merge conflicts, fast deployments, and infinite happiness. May Allah grant you a long life of health, joy, and success in everything you pursue. 🤲</p>
+        <p>You're one of the good ones, bro. Here's to Level 24 and everything that comes with it. The best code of your life hasn't been written yet.</p>
+      </div>
+      <div class="letter-foot">
+        <p class="sig">— Faris 💜</p>
+        <div class="sig-code">// git commit -m "happy_birthday_mahmoud_24th.love" ✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="foot-title">🎂 Happy 24th, Mahmoud! 🎂</div>
+  <div class="foot-sub">Level 24 Computer Engineer · May 29, 2026</div>
+  <div class="foot-code">while (alive) &#123; celebrate(); grow(); repeat(); &#125;</div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
