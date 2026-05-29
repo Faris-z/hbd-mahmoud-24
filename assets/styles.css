@@ -827,7 +827,7 @@ h2 {
   animation: bar-load 1.2s ease-out both;
 }
 
-.pstat:nth-child(2) .pstat-bar i { background: linear-gradient(90deg, var(--cyan-dim), var(--cyan)); box-shadow: 0 0 8px var(--cyan-glow); animation-delay: 0.1s; }
+.pstat:nth-child(2) .pstat-bar i { background: linear-gradient(90deg, #00c8a0, #00ff88); box-shadow: 0 0 8px rgba(0,255,136,0.5); animation-delay: 0.1s; }
 .pstat:nth-child(3) .pstat-bar i { background: linear-gradient(90deg, var(--purple), var(--cyan)); animation-delay: 0.2s; }
 .pstat:nth-child(4) .pstat-bar i { background: linear-gradient(90deg, #ff8800, var(--gold)); box-shadow: 0 0 8px var(--gold-glow); animation-delay: 0.3s; }
 .pstat:nth-child(5) .pstat-bar i { background: linear-gradient(90deg, var(--pink), var(--gold)); box-shadow: 0 0 12px var(--gold-glow); animation-delay: 0.4s; }
